@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3C984573-A3DC-4C20-A4D7-D6AB7162CE35</string>
+	<string>3296FE99-2905-4E63-863F-764425020964</string>
 	<key>IDESourceControlProjectName</key>
 	<string>playground</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -16,7 +16,7 @@
 		<string>https://github.com/GitteM/SICP.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>1. Building Abstractions with Procedures/1.1 The Elements of Programming.playground/playground.xcworkspace</string>
+	<string>1. Building Abstractions with Procedures/1.playground/playground.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>02A303D19F58B6BC7E568A2E29F3C583D137173E</key>

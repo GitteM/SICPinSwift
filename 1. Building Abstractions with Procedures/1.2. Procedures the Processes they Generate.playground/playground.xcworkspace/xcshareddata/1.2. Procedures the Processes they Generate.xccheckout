@@ -5,9 +5,9 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3C984573-A3DC-4C20-A4D7-D6AB7162CE35</string>
+	<string>EEB1E487-565E-4C1A-B20A-770997982683</string>
 	<key>IDESourceControlProjectName</key>
-	<string>playground</string>
+	<string>1.2. Procedures the Processes they Generate</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>02A303D19F58B6BC7E568A2E29F3C583D137173E</key>
@@ -16,13 +16,13 @@
 		<string>https://github.com/GitteM/SICP.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>1. Building Abstractions with Procedures/1.1 The Elements of Programming.playground/playground.xcworkspace</string>
+	<string>1. Building Abstractions with Procedures/1.2. Procedures the Processes they Generate.playground</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>02A303D19F58B6BC7E568A2E29F3C583D137173E</key>
-		<string>../../..</string>
+		<string>../..</string>
 		<key>95729DB0A6A254E33D696239EE3AAB620D06DE2A</key>
-		<string>../../../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/GitteM/SICPinSwift.git</string>
