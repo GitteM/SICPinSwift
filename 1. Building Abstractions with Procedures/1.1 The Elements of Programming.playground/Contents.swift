@@ -1,22 +1,23 @@
+
 import Foundation
-/*
+/*:
+# 1  Building Abstractions with Procedures
 
-1  Building Abstractions with Procedures
+## 1.1  The Elements of Programming
 
-1.1  The Elements of Programming
-
-1.1.1  Expressions
-1.1.2  Naming and the Environment
-1.1.3  Evaluating Combinations
-1.1.4  Compound Procedures
-1.1.5  The Substitution Model for Procedure Application
-1.1.6  Conditional Expressions and Predicates
-1.1.7  Example: Square Roots by Newton's Method
-1.1.8  Procedures as Black-Box Abstractions
-
-
+###  1.1.1  Expressions
+###  1.1.2  Naming and the Environment
+###  1.1.3  Evaluating Combinations
+###  1.1.4  Compound Procedures
+###  1.1.5  The Substitution Model for Procedure Application
+###  1.1.6  Conditional Expressions and Predicates
+###  1.1.7  Example: Square Roots by Newton's Method
+###  1.1.8  Procedures as Black-Box Abstractions
 */
-//••• 1.1.1  Expressions
+
+/*:
+### 1.1.1  Expressions
+*/
 ///*
 
 
@@ -42,9 +43,11 @@ import Foundation
 
 
 //*/
-//•••  1.1.2  Naming and the Environment
-/*
 
+/*:
+### 1.1.2  Naming and the Environment
+*/
+/*
 
 let size = 2
 5 * size
@@ -57,7 +60,9 @@ pi * (radius * radius)
 let circumference = 2 * pi * radius
 
 */
-//•••  1.1.3  Evaluating Combinations
+/*:
+### 1.1.3  Evaluating Combinations
+*/
 /*
 
 
@@ -65,7 +70,9 @@ let circumference = 2 * pi * radius
 
 
 */
-//•••  1.1.4  Compound Procedures
+/*:
+###  1.1.4  Compound Procedures
+*/
 /*
 
 
@@ -93,11 +100,14 @@ f(5)
 
 
 */
-//•••  1.1.5  The Substitution Model for Procedure Application
+/*:
+###  1.1.5  The Substitution Model for Procedure Application
+*/
 /*
 
 
-// previously defined start
+//: previously defined start
+
 func f(a: Double) -> Double {
     return sumOfSquares(x: (a + 1), y: (a * 2))
 }
@@ -109,12 +119,12 @@ func sumOfSquares(#x: Double, #y: Double) -> Double {
 func square(x: Double) -> Double {
     return x * x
 }
-// previously defined end
 
+//: previously defined end
 
-// Applicative order - Evaluate arguments and then apply
+//: Applicative order - Evaluate arguments and then apply
 
-// The Substitution model for procedure application
+//: The Substitution model for procedure application
 
 f(5)
 // sumOfSquares(x: (a + 1), y: (a * 2))
@@ -124,21 +134,23 @@ square(6) + square(10)
 36 + 100
 136
 
-// Normal order - "fully expand and then reduce" evaluation
+//: Normal order - "fully expand and then reduce" evaluation
 
 f(5)
-// expansions
+//: expansions
 sumOfSquares(x: (5 + 1), y: (5 * 2))
 (square(5 + 1)) + (square(5 * 2))
 ((5 + 1) * (5 + 1)) + (( 5 * 2) * ( 5 * 2))
-// reductions
+//: reductions
 (6 * 6) + (10 * 10)
 36 + 100
 136
 
 
 */
-//•••  1.1.6  Conditional Expressions and Predicates
+/*:
+###  1.1.6  Conditional Expressions and Predicates
+*/
 /*
 
 
@@ -156,16 +168,19 @@ abs(0)
 abs(1)
 
 func abs1(x: Double) -> Double {
-    if x < 0 { // <predicate>
-        return -x // <consequent>
+//: predicate: "if x < 0"
+    if x < 0 { 
+//: consequent: "return -x"
+        return -x
     } else {
-        return x // <alternative>
+//: alternative: "return x "
+        return x
     }
 }
 
 func abs2(x: Double) -> Double {
     return x < 0 ? -x : x
-    // <predicate> ? <consequent> : <alternative>
+//: <predicate> ? <consequent> : <alternative>
 }
 
 let x = 6
@@ -181,7 +196,9 @@ xGreaterThanOrEqualToY(x: 3, y: 3)
 
 
 */
-//••• Exercise 1.1: Below is a sequence of expressions. What is the result printed by the interpreter in response to each expression? Assume that the sequence is to be evaluated in the order in which it is presented.
+/*:
+###  Exercise 1.1: Below is a sequence of expressions. What is the result printed by the interpreter in response to each expression? Assume that the sequence is to be evaluated in the order in which it is presented.
+*/
 /*
 
 
@@ -208,7 +225,9 @@ if (b > a) && (b < (a * b)) {
 } else {
     a
 }
-// or
+
+//: or
+
 (b > a) && (b < (a * b)) ? b : a
 
 switch (a,b) {
@@ -230,7 +249,9 @@ if a > b {
 
 
 */
-//••• Exercise 1.2: Translate the following expression into prefix form
+/*:
+###  Exercise 1.2: Translate the following expression into prefix form.
+*/
 /*
 
 
@@ -239,7 +260,9 @@ if a > b {
 
 
 */
-//••• Exercise 1.3: Define a procedure that takes three numbers as arguments and returns the sum of the squares of the two larger numbers.
+/*:
+###  Exercise 1.3: Define a procedure that takes three numbers as arguments and returns the sum of the squares of the two larger numbers.
+*/
 /*
 
 
@@ -265,7 +288,9 @@ procedure(5, 3, 1)
 
 
 */
-//••• Exercise 1.4: Observe that our model of evaluation allows for combinations whose operators are compound expressions. Use this observation to describe the behavior of the following procedure.
+/*:
+###  Exercise 1.4: Observe that our model of evaluation allows for combinations whose operators are compound expressions. Use this observation to describe the behavior of the following procedure.
+*/
 /*
 
 
@@ -277,7 +302,9 @@ func aPlusAbsB(a: Double, b: Double) -> Double {
 
 
 */
-//••• Exercise 1.5: Ben Bitdiddle has invented a test to determine whether the interpreter he is faced with is using applicative-order evaluation or normal-order evaluation. He defines the following two procedures:
+/*:
+###  Exercise 1.5: Ben Bitdiddle has invented a test to determine whether the interpreter he is faced with is using applicative-order evaluation or normal-order evaluation. He defines the following two procedures:
+*/
 /*
 
 
@@ -296,18 +323,21 @@ func test(x: Double, y:()) {
     }
 }
 
-// Then he evaluates the expression
+//: Then he evaluates the expression
 
-// test(0.0, p()) //---> never terminates / ∞
+//: __never terminates / ∞__
+// test(0.0, p())
 
-// 🐢 - not sure about the following answer
+//: 🐢 - not sure about the following answer
 
-// Applicative order is used
-// if Normal order was used, x == 0, 0 would evaluate first before p() is evalated, program will terminate
+//: Applicative order is used
+//: if Normal order was used, x == 0, 0 would evaluate first before p() is evalated, program will terminate
 
 
 */
-// ••• 1.1.7  Example: Square Roots by Newton's Method
+/*:
+###  1.1.7  Example: Square Roots by Newton's Method
+*/
 /*
 
 
@@ -350,12 +380,14 @@ square(sqrt(1000.0))
 
 
 */
-//••• Exercise 1.6:  Alyssa P. Hacker doesn't see why if needs to be provided as a special form. "Why can't I just define it as an ordinary procedure in terms of cond?" she asks. Alyssa's friend Eva Lu Ator claims this can indeed be done, and she defines a new version of if:
+/*:
+###  Exercise 1.6:  Alyssa P. Hacker doesn't see why if needs to be provided as a special form. "Why can't I just define it as an ordinary procedure in terms of cond?" she asks. Alyssa's friend Eva Lu Ator claims this can indeed be done, and she defines a new version of if:
+*/
 /*
 
 
-// previously defined start
-//
+//: previously defined start
+
 func goodEnough(guess: Double, x: Double) -> Bool {
     return abs(square(guess) - x) < 0.001
 }
@@ -371,18 +403,20 @@ func average(x: Double, y: Double) -> Double {
 func improve(guess: Double, x: Double) -> Double {
     return average(guess, x / guess)
 }
-//
-// previously defined end
+
+//: previously defined end
 
 func newIf(#predicate: Bool, #thenClause: Double, #elseClause: Double) -> Double {
     return predicate ? thenClause : elseClause
 }
 
-// Eva demonstrates the program for Alyssa:
+//: Eva demonstrates the program for Alyssa:
+
 newIf(predicate: 2 == 3, thenClause: 0.0, elseClause: 5.0)
 newIf(predicate: 1 == 1, thenClause: 0.0, elseClause: 5.0)
 
-// Delighted, Alyssa uses new-if to rewrite the square-root program
+//: Delighted, Alyssa uses new-if to rewrite the square-root program
+
 func sqrtIter(guess: Double, x: Double) -> Double {
     return newIf(predicate: goodEnough(guess, x),
         thenClause: guess,
@@ -395,17 +429,18 @@ func sqrt(x: Double) -> Double {
 
 //sqrt(9.0)
 
-// Q: What happens when Alyssa attempts to use this to compute square roots? Explain.
-// A: the newIf function uses applicative order evalutation. the interpreter first evaluates the operator and operands and then applies the resulting procedure to the resulting arguments. this results in an infinite recursion because the else-clause is always evaluated
+//: Q: What happens when Alyssa attempts to use this to compute square roots? Explain.
+//: A: the newIf function uses applicative order evalutation. the interpreter first evaluates the operator and operands and then applies the resulting procedure to the resulting arguments. this results in an infinite recursion because the else-clause is always evaluated
 
 
 */
-//••• Exercise 1.7) i: The good-enough? test used in computing square roots will not be very effective for finding the square roots of very small numbers. Also, in real computers, arithmetic operations are almost always performed with limited precision. This makes our test inadequate for very large numbers. Explain these statements, with examples showing how the test fails for small and large numbers.
+/*:
+###  Exercise 1.7) i: The good-enough? test used in computing square roots will not be very effective for finding the square roots of very small numbers. Also, in real computers, arithmetic operations are almost always performed with limited precision. This makes our test inadequate for very large numbers. Explain these statements, with examples showing how the test fails for small and large numbers.
+*/
 /*
 
 
-// previously defined start
-//
+//: previously defined start
 
 func abs(x: Double) -> Double {
     return x < 0 ? -x : x
@@ -439,8 +474,7 @@ func sqrt(x: Double) -> Double {
     return sqrtIter(guess: 1.0, x: x)
 }
 
-//
-// previously defined end
+//: previously defined end
 
 
 sqrtIter(guess: 1, x: 0.0001)
@@ -465,13 +499,14 @@ sqrtIter(guess: 1, x: 0.0001)
 
 
 */
-//••• Exercise 1.7) ii: An alternative strategy for implementing good-enough? is to watch how guess changes from one iteration to the next and to stop when the change is a very small fraction of the guess. Design a square-root procedure that uses this kind of end test. Does this work better for small and large numbers?
+/*:
+###  Exercise 1.7) ii: An alternative strategy for implementing good-enough? is to watch how guess changes from one iteration to the next and to stop when the change is a very small fraction of the guess. Design a square-root procedure that uses this kind of end test. Does this work better for small and large numbers?
+*/
 /*
 
 
 
-// previously defined start
-//
+//: previously defined start
 
 func abs(x: Double) -> Double {
     return x < 0 ? -x : x
@@ -500,8 +535,8 @@ func sqrtIter(#guess: Double, #x: Double) -> Double {
 func sqrt(x: Double) -> Double {
     return sqrtIter(guess: 1.0, x: x)
 }
-//
-// previously defined end
+
+//: previously defined end
 
 func goodEnough(#guess: Double, #x: Double) -> Bool {
     return abs(improve(guess: guess, x: x) - guess) < guess * 0.001
@@ -518,8 +553,11 @@ sqrtIter(guess: 1, x: 0.000001)
 // 0.00001  0.003162292647723271    0,003162277660168   ✔︎
 // 0.000001 0.001000553871053945    0,001               ✔︎
 
-// sqrtIter(guess: 1, x: 1000000000000) // evaluates
-// sqrtIter(guess: 1, x:   10000000000000) // loops
+//: Evaluates
+// sqrtIter(guess: 1, x: 1000000000000) 
+
+//: Loops
+// sqrtIter(guess: 1, x:   10000000000000)
 
 
 // x                sqrtIter            calculator          acceptable
@@ -528,13 +566,15 @@ sqrtIter(guess: 1, x: 0.000001)
 // 10000000000000   3162433.547242504   3162277,66016838    ✖︎
 
 
-// looks ok for smaller numbers, not so much for larger numbers
-// 🐢 revisit
+//: looks ok for smaller numbers, not so much for larger numbers
+//: 🐢 revisit
 
 
 
 */
-//••• Exercise 1.8: Newton's method for cube roots is based on the fact that if y is an approximation to the cube root of x, then a better approximation is given by the value. ((r / y * y )+ 2y) / 3
+/*:
+###  Exercise 1.8: Newton's method for cube roots is based on the fact that if y is an approximation to the cube root of x, then a better approximation is given by the value. ((r / y * y )+ 2y) / 3
+*/
 /*
 
 
@@ -584,19 +624,19 @@ cubeRoot(-1000)
 
 
 */
-//••• 1.1.8  Procedures as Black-Box Abstractions
-/*
+/*:
+###  1.1.8  Procedures as Black-Box Abstractions
+*/
+///*
+
+//: procedural abstraction
+
+//: local names
+
+//: A formal parameter of a procedure has a very special role in the procedure definition, in that it doesn't matter what name the formal parameter has. Such a name is called a bound variable, and we say that the procedure definition binds its formal parameters.
 
 
-
-// procedural abstraction
-
-// local names
-
-// A formal parameter of a procedure has a very special role in the procedure definition, in that it doesn't matter what name the formal parameter has. Such a name is called a bound variable, and we say that the procedure definition binds its formal parameters.
-
-
-// Internal definition and block structure
+//: Internal definition and block structure
 
 func square(x: Double) -> Double {
     return x * x
@@ -625,17 +665,18 @@ func sqrt(x: Double) -> Double {
     let goodEnough = { (guess: Double) -> Bool in
         return abs(square(guess) - x) < 0.001
     }
-
+    
     let squareIter: Double -> Double = {
         var s: (Double -> Double)!
         s = { guess in
-            return goodEnough(guess) ? guess : s(improve(guess)) }
+            return goodEnough(guess) ? guess : s(improve(guess))
+        }
         return s
         }()
     
     return squareIter(1.0)
 }
 
-sqrt(9.0)
+floor(sqrt(9.0))
 
-*/
+//*/
